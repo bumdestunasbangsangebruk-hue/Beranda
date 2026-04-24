@@ -18,14 +18,13 @@
         background-color: #f4f4f4;
         color: #333;
         line-height: 1.6;
-        position: relative;
-        padding-top: 80px;
-        /* Watermark besar sebagai background */
+        padding-top: 100px; /* ruang untuk marquee dan jarak logo */
         background-image: url('logo-watermark.png'); /* gambar watermark besar bershader 3D */
         background-repeat: no-repeat;
         background-position: center;
         background-size: 80%;
         opacity: 0.95;
+        position: relative;
     }
 
     /* Overlay semi transparan agar konten tetap terbaca */
@@ -45,7 +44,7 @@
         white-space: nowrap;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         background-color: #fff;
-        padding: 10px 0;
+        padding: 8px 0; /* jarak lebih rapat */
         position: fixed;
         top: 0;
         z-index: 10;
@@ -54,42 +53,41 @@
     .marquee span {
         display: inline-block;
         padding-left: 100%;
-        animation: scroll-left 15s linear infinite;
+        animation: scroll-left 12s linear infinite;
         font-weight: 600;
         font-size: 1.2rem;
         color: #2e7d32;
     }
 
     @keyframes scroll-left {
-        0% {
-            transform: translateX(0%);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
     }
 
     header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px 10px 10px 10px;
-        margin-top: 60px; /* beri ruang untuk marquee */
+        padding: 15px 10px 10px 10px;
+        margin-top: 50px; /* jarak dari marquee */
+        background-color: transparent;
     }
 
     /* Logo besar dan bershader */
     #logo-img {
         max-width: 150px;
         height: auto;
-        cursor: pointer;
+        background-color: #fff; /* background putih di sekitar logo */
+        padding: 10px;
+        border-radius: 8px;
+        cursor: default;
         transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    /* Efek saat logo diklik (besar dan shade) */
-    #logo-img.besar {
-        transform: scale(1.5);
+    /* Efek saat hover di cursor */
+    #logo-img:hover {
+        transform: scale(1.2);
         box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        z-index: 1000;
     }
 
     h1 {
@@ -97,6 +95,7 @@
         font-size: 2rem;
         color: #2e7d32;
         text-align: center;
+        margin-bottom: 0;
     }
 
     nav {
@@ -106,6 +105,7 @@
         padding: 10px 0;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         margin-top: 10px;
+        flex-wrap: wrap;
     }
 
     nav a {
@@ -115,6 +115,7 @@
         font-weight: 500;
         transition: background 0.3s, transform 0.3s;
         border-radius: 4px;
+        margin: 4px;
     }
 
     nav a:hover {
@@ -143,7 +144,7 @@
         text-align: center;
     }
 
-    /* Grid untuk unit-unit */
+    /* Grid unit */
     .units {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -202,9 +203,9 @@
 </div>
 
 <header>
-    <!-- Logo besar dan bershader, klik untuk efek zoom/shade -->
+    <!-- Logo besar dan bershader, hover membesar dan shade -->
     <img src="logo.png" alt="Logo Ngebruk Tunas Bangsa" id="logo-img" />
-    <h1>Ngebruk Tunas Bangsa</h1>
+    <h1>BUMDes Ngebruk Tunas Bangsa Ngebruk</h1>
 </header>
 
 <!-- Navigasi -->
@@ -218,7 +219,7 @@
 
 <div class="container">
     <section id="beranda" class="section">
-        <h2>Selamat Datang di Ngebruk Tunas Bangsa</h2>
+        <h2>Selamat Datang di BUMDes Ngebruk Tunas Bangsa</h2>
         <p style="text-align: center;">Badan Usaha yang berkomitmen dalam pengembangan unit-unit penting seperti Air Bersih, Sampah, Pertanian, dan Perikanan untuk kesejahteraan masyarakat.</p>
     </section>
     <section id="unit" class="section">
@@ -254,13 +255,12 @@
     &copy; 2024 Ngebruk Tunas Bangsa. All rights reserved.
 </footer>
 
-<!-- Script untuk efek zoom/shade logo -->
+<!-- Script hover logo -->
 <script>
     const logo = document.getElementById('logo-img');
 
-    logo.addEventListener('click', () => {
-        logo.classList.toggle('besar');
-    });
+    // Tidak perlu klik, hanya hover efek membesar
+    // Sudah di CSS hover
 </script>
 
 </body>
