@@ -19,10 +19,17 @@
         color: #333;
         line-height: 1.6;
         padding-top: 100px; /* ruang untuk marquee dan jarak logo */
-        background-image: url('logo-watermark.png'); /* gambar watermark besar bershader 3D */
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 80%;
+        /* Watermark berjajar dari gambar logo-transparan.png */
+        background-image: 
+            url('logo-transparan.png'), 
+            url('logo-transparan.png'), 
+            url('logo-transparan.png');
+        background-position: 
+            10px 10px, 
+            50px 50px, 
+            150px 150px;
+        background-repeat: repeat;
+        background-size: 50px 50px; /* sesuaikan ukuran watermark */
         opacity: 0.95;
         position: relative;
     }
@@ -84,7 +91,7 @@
         transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    /* Efek saat hover di cursor */
+    /* Efek hover membesar dan shade */
     #logo-img:hover {
         transform: scale(1.2);
         box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -144,7 +151,7 @@
         text-align: center;
     }
 
-    /* Grid unit */
+    /* Grid untuk unit-unit */
     .units {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -254,14 +261,6 @@
 <footer>
     &copy; 2024 Ngebruk Tunas Bangsa. All rights reserved.
 </footer>
-
-<!-- Script hover logo -->
-<script>
-    const logo = document.getElementById('logo-img');
-
-    // Tidak perlu klik, hanya hover efek membesar
-    // Sudah di CSS hover
-</script>
 
 </body>
 </html>
