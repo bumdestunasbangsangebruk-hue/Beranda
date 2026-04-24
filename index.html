@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ngebruk Tunas Bangsa</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Jika menggunakan PNG sebagai favicon -->
+    <!-- <link rel="icon" href="favicon.png" type="image/png" /> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2e7d32; /* Warna hijau dari logo */
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 80px;
+        }
+        header h1 {
+            margin-top: 10px;
+            color: #ffffff; /* Warna putih agar kontras */
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1565c0; /* Warna biru dari logo */
+        }
+        nav a {
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #0d47a1;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+        .units {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .unit-card {
+            flex: 1 1 calc(25% - 20px);
+            background-color: #c8e6c9; /* Warna hijau muda */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .unit-card:hover {
+            transform: translateY(-5px);
+            background-color: #a5d6a7;
+        }
+        @media(max-width: 768px) {
+            .unit-card {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+        @media(max-width: 480px) {
+            .unit-card {
+                flex: 1 1 100%;
+            }
+        }
+        footer {
+            background-color: #2e7d32;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Ngebruk Tunas Bangsa" />
+        <h1>Ngebruk Tunas Bangsa</h1>
+    </header>
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#air-bersih">Unit Air Bersih</a>
+        <a href="#sampah">Unit Sampah</a>
+        <a href="#pertanian">Unit Pertanian</a>
+        <a href="#perikanan">Unit Perikanan</a>
+    </nav>
+    <div class="container">
+        <section id="beranda" class="section">
+            <h2>Selamat Datang di Ngebruk Tunas Bangsa</h2>
+            <p>Badan Usaha yang berkomitmen dalam pengembangan unit-unit penting seperti Air Bersih, Sampah, Pertanian, dan Perikanan untuk kesejahteraan masyarakat.</p>
+        </section>
+        <section id="unit" class="section">
+            <h2>Unit-Unit Kami</h2>
+            <div class="units">
+                <div class="unit-card" id="air-bersih">
+                    <h3>Unit Air Bersih</h3>
+                    <p>Melayani kebutuhan air bersih masyarakat dengan teknologi terbaru.</p>
+                </div>
+                <div class="unit-card" id="sampah">
+                    <h3>Unit Sampah</h3>
+                    <p>Pengelolaan sampah yang ramah lingkungan dan berkelanjutan.</p>
+                </div>
+                <div class="unit-card" id="pertanian">
+                    <h3>Unit Pertanian</h3>
+                    <p>Mendorong pertanian modern dan inovatif untuk meningkatkan hasil panen.</p>
+                </div>
+                <div class="unit-card" id="perikanan">
+                    <h3>Unit Perikanan</h3>
+                    <p>Pengembangan perikanan untuk meningkatkan kesejahteraan nelayan.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        &copy; 2024 Ngebruk Tunas Bangsa. All rights reserved.
+    </footer>
+</body>
+</html>
