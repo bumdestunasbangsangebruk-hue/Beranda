@@ -6,7 +6,7 @@
 <title>Ngebruk Tunas Bangsa</title>
 <!-- Favicon -->
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
-<!-- Google Fonts untuk tampilan modern -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 <style>
     * {
@@ -20,20 +20,22 @@
         background-color: #f4f4f4;
         color: #333;
         line-height: 1.6;
-        background-image: url('logo-transparan.png'); /* watermark logo transparan */
+        /* Watermark besar sebagai background */
+        background-image: url('logo-watermark.png'); /* gambar watermark besar bershader 3D */
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 300px auto;
+        background-size: 80%; /* besar watermark */
         opacity: 0.95;
+        position: relative;
     }
 
-    /* Menambahkan overlay semi transparan untuk watermark agar tidak mengganggu konten */
+    /* Overlay semi transparan agar konten tetap terbaca */
     body::before {
         content: "";
         position: fixed;
         top: 0; left: 0;
         width: 100%; height: 100%;
-        background: rgba(244, 244, 244, 0.5);
+        background: rgba(244, 244, 244, 0.6);
         z-index: -1;
     }
 
@@ -42,21 +44,22 @@
         flex-direction: column;
         align-items: center;
         padding: 20px;
-        background-color: transparent;
         margin-top: 20px;
+        background-color: transparent;
     }
 
+    /* Logo bershader dan besar */
     header img {
-        max-width: 100px;
+        max-width: 150px;
         height: auto;
-        /* menghilangkan background putih dari logo */
+        /* Tambahkan efek bershader jika perlu di gambar asli */
         display: block;
     }
 
     header h1 {
         margin-top: 10px;
         font-size: 2rem;
-        color: #2e7d32; /* warna hijau sesuai logo */
+        color: #2e7d32; /* hijau logo */
         text-align: center;
     }
 
@@ -156,7 +159,7 @@
 <body>
 <header>
     <img src="logo.png" alt="Logo Ngebruk Tunas Bangsa" />
-    <h1>BUMDes Tunas Bangsa Ngebruk</h1>
+    <h1>BUMDes Ngebruk Tunas Bangsa Ngebruk</h1>
 </header>
 <nav>
     <a href="#beranda">Beranda</a>
@@ -167,7 +170,7 @@
 </nav>
 <div class="container">
     <section id="beranda" class="section">
-        <h2>Selamat Datang di BUMDes Tunas Bangsa</h2>
+        <h2>Selamat Datang di BUMDes Ngebruk Tunas Bangsa Ngebruk</h2>
         <p style="text-align: center;">Badan Usaha yang berkomitmen dalam pengembangan unit-unit penting seperti Air Bersih, Sampah, Pertanian, dan Perikanan untuk kesejahteraan masyarakat.</p>
     </section>
     <section id="unit" class="section">
@@ -193,7 +196,7 @@
     </section>
 </div>
 <footer>
-    &copy; 2024 Ngebruk Tunas Bangsa. All rights reserved.
+    &copy; 2024 Bumdes Ngebruk Tunas Bangsa Ngebruk. All rights reserved.
 </footer>
 </body>
 </html>
