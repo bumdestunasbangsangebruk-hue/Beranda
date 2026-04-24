@@ -1,144 +1,199 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Ngebruk Tunas Bangsa</title>
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <!-- Jika menggunakan PNG sebagai favicon -->
-    <!-- <link rel="icon" href="favicon.png" type="image/png" /> -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #2e7d32; /* Warna hijau dari logo */
-            padding: 20px;
-            text-align: center;
-        }
-        header img {
-            max-width: 80px;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ngebruk Tunas Bangsa</title>
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<!-- Google Fonts untuk tampilan modern -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+        background-image: url('logo-transparan.png'); /* watermark logo transparan */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 300px auto;
+        opacity: 0.95;
+    }
+
+    /* Menambahkan overlay semi transparan untuk watermark agar tidak mengganggu konten */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(244, 244, 244, 0.5);
+        z-index: -1;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background-color: transparent;
+        margin-top: 20px;
+    }
+
+    header img {
+        max-width: 100px;
+        height: auto;
+        /* menghilangkan background putih dari logo */
+        display: block;
+    }
+
+    header h1 {
+        margin-top: 10px;
+        font-size: 2rem;
+        color: #2e7d32; /* warna hijau sesuai logo */
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #1565c0; /* biru */
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+        color: #fff;
+        padding: 12px 20px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s, transform 0.3s;
+        border-radius: 4px;
+    }
+
+    nav a:hover {
+        background-color: #0d47a1;
+        transform: translateY(-2px);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    .section {
+        margin-bottom: 40px;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .section h2 {
+        margin-bottom: 20px;
+        color: #2e7d32;
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    /* Grid untuk unit-unit */
+    .units {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .unit-card {
+        background-color: #a8dadc; /* warna segar dan modern */
+        padding: 20px;
+        border-radius: 8px;
+        transition: transform 0.3s, background-color 0.3s;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .unit-card:hover {
+        transform: translateY(-5px);
+        background-color: #457b9d;
+        color: #fff;
+    }
+
+    .unit-card h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    footer {
+        background-color: #2e7d32;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        margin-top: 40px;
+        font-size: 0.9rem;
+    }
+
+    /* Responsiveness */
+    @media(max-width: 768px) {
         header h1 {
-            margin-top: 10px;
-            color: #ffffff; /* Warna putih agar kontras */
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #1565c0; /* Warna biru dari logo */
+            font-size: 1.5rem;
         }
         nav a {
-            color: #ffffff;
-            padding: 14px 20px;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-        nav a:hover {
-            background-color: #0d47a1;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
+            padding: 10px 15px;
         }
         .section {
-            margin-bottom: 40px;
-            background-color: #ffffff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        .section h2 {
-            margin-bottom: 20px;
-            color: #2e7d32;
-        }
-        .units {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .unit-card {
-            flex: 1 1 calc(25% - 20px);
-            background-color: #c8e6c9; /* Warna hijau muda */
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-        .unit-card:hover {
-            transform: translateY(-5px);
-            background-color: #a5d6a7;
-        }
-        @media(max-width: 768px) {
-            .unit-card {
-                flex: 1 1 calc(50% - 20px);
-            }
-        }
-        @media(max-width: 480px) {
-            .unit-card {
-                flex: 1 1 100%;
-            }
-        }
-        footer {
-            background-color: #2e7d32;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo Ngebruk Tunas Bangsa" />
-        <h1>Ngebruk Tunas Bangsa</h1>
-    </header>
-    <nav>
-        <a href="#beranda">Beranda</a>
-        <a href="#air-bersih">Unit Air Bersih</a>
-        <a href="#sampah">Unit Sampah</a>
-        <a href="#pertanian">Unit Pertanian</a>
-        <a href="#perikanan">Unit Perikanan</a>
-    </nav>
-    <div class="container">
-        <section id="beranda" class="section">
-            <h2>Selamat Datang di Ngebruk Tunas Bangsa</h2>
-            <p>Badan Usaha yang berkomitmen dalam pengembangan unit-unit penting seperti Air Bersih, Sampah, Pertanian, dan Perikanan untuk kesejahteraan masyarakat.</p>
-        </section>
-        <section id="unit" class="section">
-            <h2>Unit-Unit Kami</h2>
-            <div class="units">
-                <div class="unit-card" id="air-bersih">
-                    <h3>Unit Air Bersih</h3>
-                    <p>Melayani kebutuhan air bersih masyarakat dengan teknologi terbaru.</p>
-                </div>
-                <div class="unit-card" id="sampah">
-                    <h3>Unit Sampah</h3>
-                    <p>Pengelolaan sampah yang ramah lingkungan dan berkelanjutan.</p>
-                </div>
-                <div class="unit-card" id="pertanian">
-                    <h3>Unit Pertanian</h3>
-                    <p>Mendorong pertanian modern dan inovatif untuk meningkatkan hasil panen.</p>
-                </div>
-                <div class="unit-card" id="perikanan">
-                    <h3>Unit Perikanan</h3>
-                    <p>Pengembangan perikanan untuk meningkatkan kesejahteraan nelayan.</p>
-                </div>
+<header>
+    <img src="logo.png" alt="Logo Ngebruk Tunas Bangsa" />
+    <h1>BUMDes Tunas Bangsa Ngebruk</h1>
+</header>
+<nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#air-bersih">Unit Air Bersih</a>
+    <a href="#sampah">Unit Sampah</a>
+    <a href="#pertanian">Unit Pertanian</a>
+    <a href="#perikanan">Unit Perikanan</a>
+</nav>
+<div class="container">
+    <section id="beranda" class="section">
+        <h2>Selamat Datang di BUMDes Tunas Bangsa</h2>
+        <p style="text-align: center;">Badan Usaha yang berkomitmen dalam pengembangan unit-unit penting seperti Air Bersih, Sampah, Pertanian, dan Perikanan untuk kesejahteraan masyarakat.</p>
+    </section>
+    <section id="unit" class="section">
+        <h2>Unit-Unit Kami</h2>
+        <div class="units">
+            <div class="unit-card" id="air-bersih">
+                <h3>Unit Air Bersih</h3>
+                <p>Melayani kebutuhan air bersih masyarakat dengan teknologi terbaru.</p>
             </div>
-        </section>
-    </div>
-    <footer>
-        &copy; 2024 Ngebruk Tunas Bangsa. All rights reserved.
-    </footer>
+            <div class="unit-card" id="sampah">
+                <h3>Unit Sampah</h3>
+                <p>Pengelolaan sampah yang ramah lingkungan dan berkelanjutan.</p>
+            </div>
+            <div class="unit-card" id="pertanian">
+                <h3>Unit Pertanian</h3>
+                <p>Mendorong pertanian modern dan inovatif untuk meningkatkan hasil panen.</p>
+            </div>
+            <div class="unit-card" id="perikanan">
+                <h3>Unit Perikanan</h3>
+                <p>Pengembangan perikanan untuk meningkatkan kesejahteraan nelayan.</p>
+            </div>
+        </div>
+    </section>
+</div>
+<footer>
+    &copy; 2024 Ngebruk Tunas Bangsa. All rights reserved.
+</footer>
 </body>
 </html>
